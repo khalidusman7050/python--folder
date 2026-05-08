@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header{
+    width: 100%;
+    background: #9a5353;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.logo h1{
+    text-transform: capitalize;
+}
+
+.list-type{
+    display: flex;
+    gap: 20px;
+}
+
+.list-type li{
+    list-style: none;
+}
+
+.list-type li a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    text-transform: capitalize;
+}
+
+.list-type li a:hover{
+    color: yellow;
+}
+
+/* HERO SECTION */
+.section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    background: #333;
+}
+
+.home-section{
+    max-width: 500px;
+}
+
+.home-section h1{
+    font-size: 50px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.home-section p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+button{
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+button:hover{
+    background: white;
+    color: black;
+}
+
+.portfolio-img img{
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* ABOUT */
+.about{
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.about h2{
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-size: 35px;
+}
+
+.about p{
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills{
+    background: aqua;
+    color: black;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.skills h2{
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.skills ul{
+    list-style: none;
+}
+
+.skills ul li{
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* PROJECTS */
+.projects{
+    background: #444;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.projects h2{
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+
+.project{
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.project h3{
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.project p{
+    margin-bottom: 15px;
+}
+
+.project img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* CONTACT */
+.form{
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.form h2{
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.form-c{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.form-c input,
+.form-c textarea{
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* FOOTER */
+footer{
+    text-align: center;
+    padding: 20px;
+    background: #111;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .list-type{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-section h1{
+        font-size: 35px;
+    }
+
+    .portfolio-img img{
+        width: 220px;
+        margin-top: 20px;
+    }
+}

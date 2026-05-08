@@ -2,35 +2,56 @@ import sys
 import random
 from enum import Enum
 
-class rps(Enum):
+game_count = 0
+
+
+class RPS(Enum):
     ROCK = 1
     PAPER = 2
     SCISSORS = 3
- 
-    
-print("")
 
-playerchoice = input("Enter...\n1 forRock, \n2 for Paper, \n3 for Scissors:\n\n")
+def play_rps():
+    while True:
+        playerchoice = input(
+            "\nEnter...\n1 for Rock\n2 for Paper\n3 for Scissors:\n"
+        )
 
-player = int(playerchoice)
+        if playerchoice not in ["1", "2", "3"]:
+            print("You must enter 1, 2, or 3.")
+            continue
 
-if player < 1 or player > 3:
-    sys.exit("Invalid choice. Please enter 1, 2, or 3.")
-    
-computerchoice = random.choice("123")
-computer = int(computerchoice)
-print("you chose: " +str(rps(player)).replace('rps.', '') + ".")
-print("python chose: " + str(rps(computer)).replace('rps.', '') + ".")
+        player = int(playerchoice)
+        computer = random.randint(1, 3)
 
-print("")
+        print("You chose:", RPS(player).name)
+        print("Python chose:", RPS(computer).name)
+        def decide_winner(player,computer):
+            if player == computer:
+                return"It's a tie."
+            elif (player == 1 and computer == 3) or \
+                (player == 2 and computer == 1) or \
+                (player == 3 and computer == 2):
+                return"You win!"
+            else:
+                return"Python wins!"
+            
+        game_result =decide_winner(player,computer)
+        
+        print(game_result)
+            
+        global game_count
+        game_count += 1
+            
+        print ("\nGame count: "+ str(game_count))
 
-if player == 1 and computer == 3:
-    print("you win.")
-elif player == 2 and computer == 1:
-    print("you win.")
-elif player == 3 and computer == 2:
-    print("you win.")
-elif player == computer:
-    print("it's a tie.")
-else:
-    print("python wins.")
+        # play again?
+        playagain = input("\nPlay again? (y/q): ").lower()
+        if playagain == "q":
+            print("Thanks for playing!")
+            sys.exit()
+        elif playagain != "y":
+            print("Invalid input, exiting.")
+            sys.exit()
+
+# start game
+play_rps()
